@@ -1,6 +1,6 @@
 module DynamicFooter
-  class FooterInfo
-    def self.info
+  module FooterInfo
+    def info
       {
         name: Rails.application.class.module_parent_name,
         copyright: '©',
