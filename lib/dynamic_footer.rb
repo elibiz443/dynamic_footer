@@ -8,3 +8,5 @@ module DynamicFooter
   class Error < StandardError; end
   # Your code goes here...
 end
+
+ActionView::Base.include DynamicFooter::Helpers::ApplicationHelper
