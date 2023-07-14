@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "dynamic_footer/version"
-require_relative "dynamic_footer/footer_info"
-require_relative "dynamic_footer/helpers/application_helper"
+require 'dynamic_footer/version'
+require 'dynamic_footer/footer_info'
+require 'dynamic_footer/helpers/application_helper'
+require 'action_view'
+require 'rails' 
 
 module DynamicFooter
   class Error < StandardError; end

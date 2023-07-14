@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.4.14"
   spec.add_development_dependency "rails", "~> 7.0.6"
+  spec.add_development_dependency 'actionview'
 
   spec.add_dependency "rails", "~> 7.0.6"
 end

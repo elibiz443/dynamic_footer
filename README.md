@@ -54,12 +54,6 @@ You can also add each part individually as follows:(This results in more lines o
 <%= footer_info[:rights] %> or <%= footer_info("Your Custom Rights")[:rights] %>
 ```
 
-## Demo
-
-![Demo](
-https://user-images.githubusercontent.com/55306344/129478792-4d5b1b7b-1b9d-4a3a-8a7b-8b1f9e4b2b5b.gif
-)
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/elibiz443/dynamic_footer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/elibiz443/dynamic_footer/blob/main/CODE_OF_CONDUCT.md).
