@@ -1,12 +1,21 @@
 module DynamicFooter
   module FooterInfo
-    def self.info
+    def self.info(footer_element = {})
       {
-        name: Rails.application.class.module_parent_name,
-        copyright: '©',
+        copyright: footer_element[:copyright] || '©',
         year: Time.now.year,
-        rights: 'All rights reserved'
+        name: footer_element[:name] || Rails.application.class.module_parent_name,
+        separator: footer_element[:separator] || ' - ',
+        rights: footer_element[:rights] || 'All rights reserved'
       }
+    end
+
+    def self.format_footer(footer_statement = {})
+      "#{footer_statement[:copyright]}
+      #{footer_statement[:year]}
+      #{footer_statement[:name]}
+      #{footer_statement[:separator]}
+      #{footer_statement[:rights]}"
     end
   end
 end
