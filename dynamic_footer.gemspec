@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["ellyambet10@gmail.com"]
 
   spec.summary = "gem that allows you to add dynamic footer info to your rails app."
-  spec.description = "This gem allows you to add the name of your app, copyright, current year and additional info to the footer section of your rails app."
+  spec.description = "This lightweight gem allows you to effortlessly add the current year to your footer. Though that can just be handled by --Time.now.year-- it's always cool to be able to do something extra effortlessly and that's where this gem comes in. It empowers you to customize your app name, or fallback to the default Rails app name, and easily include copyright information and 'All Rights Reserved' statements.It may be a small gem, but it's designed to bring simplicity and convenience to your footer. This gem has been inspired by the fact that the JS way of adding the current year to footer is buggy in the rails environment."
   spec.homepage = "https://github.com/elibiz443/dynamic_footer"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
