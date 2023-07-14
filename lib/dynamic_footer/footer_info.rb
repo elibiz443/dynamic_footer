@@ -6,7 +6,7 @@ module DynamicFooter
         year: Time.now.year,
         name: footer_element[:name] || Rails.application.class.module_parent_name,
         separator: footer_element[:separator] || ' - ',
-        rights: footer_element[:rights] || 'All rights reserved'
+        rights: footer_element[:rights] || 'All Rights Reserved'
       }
     end
 

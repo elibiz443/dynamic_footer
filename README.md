@@ -1,34 +1,68 @@
 # DynamicFooter
 
-This gem allows you to add the name of your app, copyright, current year and additional info to the footer section of your rails app. This is because the JS way of implementing the above comes with a lot of challenges.
+This lightweight gem allows you to effortlessly add the current year to your footer. Though that can just be handled by ```Time.now.year``` it's always cool to be able to do something extra effortlessly and that's where this gem comes in. It empowers you to customize your app name, or fallback to the default Rails app name, and easily include copyright information and "All Rights Reserved" statements.It may be a small gem, but it's designed to bring simplicity and convenience to your footer. This gem has been inspired by the fact that the JS way of adding the current year to footer is buggy in the rails environment.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dynamic_footer`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add this line to your application's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
+    gem 'dynamic_footer'
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+And then execute:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+    $ bundle install
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Or install it yourself as:
+
+    $ gem install dynamic_footer
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this gem, simply add the following to your footer:
 
-## Development
+    <%= footer_statement('My Company INC.') %>
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+This will produce the following output:
+  
+      © 2023 My Company INC. - All Rights Reserved.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+If you want to use the default Rails app name, simply omit the argument:
+  
+      <%= footer_statement %>
+
+This will produce the following output:
+
+        © 2023 My App - All Rights Reserved.
+
+You can also add a custom statement to the footer by using the following:
+  
+      <%= footer_statement('My Company INC.', 'This is a custom statement.') %>
+
+This will produce the following output:
+  
+          © 2023 My Company INC. - All Rights Reserved. This is a custom statement.
+
+You can also add each part individually as follows:(This results in more lines of code and doesn't support the idea of simplicity that this gem intends to solve. But you can use it if you want to highly customize the footer statement)
+
+```
+<%= footer_info[:copyright] %> or <%= footer_info("Your Copyright Custom Statement")[:copyright] %>
+<%= footer_info[:year] %> 
+<%= footer_info[:name] %> or <%= footer_info("Your Custom Name")[:name] %>
+<%= footer_info[:separator] %> or <%= footer_info("Your Custom Separator")[:separator] %>
+<%= footer_info[:rights] %> or <%= footer_info("Your Custom Rights")[:rights] %>
+```
+
+## Demo
+
+![Demo](
+https://user-images.githubusercontent.com/55306344/129478792-4d5b1b7b-1b9d-4a3a-8a7b-8b1f9e4b2b5b.gif
+)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dynamic_footer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/dynamic_footer/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/elibiz443/dynamic_footer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/elibiz443/dynamic_footer/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
